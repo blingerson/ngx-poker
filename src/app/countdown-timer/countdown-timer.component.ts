@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
     ],
 } )
 export class CountdownTimerComponent implements OnInit, OnDestroy {
-    @Input() countdownTimer : Countdown;
+    @Input() countdownTimer : Countdown = new Countdown();
     @Output() onReset : EventEmitter<void> = new EventEmitter();
     private events : Subscription = new Subscription();
 

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BlindsComponent } from './blinds.component';
+import { BlindsModule } from 'src/app/blinds/blinds.module';
 
 describe('BlindsComponent', () => {
   let component: BlindsComponent;
@@ -8,7 +9,7 @@ describe('BlindsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlindsComponent ]
+      imports: [ BlindsModule ]
     })
     .compileComponents();
   }));

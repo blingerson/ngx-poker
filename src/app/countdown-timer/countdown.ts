@@ -11,7 +11,7 @@ export class Countdown {
     loop : boolean = true;
     secondsLeft : number; // default to 15 minutes
     constructor( props : Partial<Countdown> = {} ) {
-        Object.assign<Countdown>( this, props );
+        Object.assign( this, props );
         this.secondsLeft = this.startTime;
         this.reset$ = this.resetSubject.asObservable();
         this.interval$.subscribe( () => {

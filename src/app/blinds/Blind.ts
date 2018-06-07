@@ -4,7 +4,7 @@ export class Blind {
     small : number;
 
     constructor( props : Partial<Blind> = {} ) {
-        Object.assign<Blind>( this, props );
+        Object.assign( this, props );
     }
 
     toString() {

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CountdownTimerComponent } from './countdown-timer.component';
+import { CountdownTimerModule } from 'src/app/countdown-timer/countdown-timer.module';
 
 describe('CountdownTimerComponent', () => {
   let component: CountdownTimerComponent;
@@ -8,7 +9,7 @@ describe('CountdownTimerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CountdownTimerComponent ]
+      imports: [ CountdownTimerModule ]
     })
     .compileComponents();
   }));

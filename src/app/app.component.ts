@@ -15,9 +15,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.events.add( this.game.countdown.reset$.subscribe( () => {
-            const counter = 0;
+            let counter : number = 0;
             const blinkTimer = interval( 300 ).subscribe( () => {
-                this.blinkOn = !this.blinkOn;
+                this.toggleBlink();
                 if( counter === 7 ) {
                     blinkTimer.unsubscribe();
                     this.events.remove( blinkTimer );
@@ -25,6 +25,10 @@ export class AppComponent implements OnInit, OnDestroy {
                 counter ++;
             } );
         } ) );
+    }
+
+    toggleBlink() {
+        this.blinkOn = !this.blinkOn;
     }
 
     ngOnDestroy() {

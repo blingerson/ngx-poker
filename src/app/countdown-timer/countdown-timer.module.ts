@@ -18,4 +18,4 @@ import { MatButtonModule, MatCardModule, MatIconModule } from '@angular/material
     ],
 } )
 
-export class CountdownTimerModule { }
+export class CountdownTimerModule {}
