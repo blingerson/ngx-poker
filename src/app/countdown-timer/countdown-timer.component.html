@@ -1,0 +1,12 @@
+<mat-card>
+    <mat-card-title>
+        <h2 class="mat-headline">Time Remaining:</h2>
+    </mat-card-title>
+    <mat-card-content>
+        <p class="mat-display-4">{{ countdownTimer.toString() }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button color="primary" mat-raised-button (click)="countdownTimer.toggle()">{{ countdownTimer.getToggleText() }} Timer</button>
+        <button color="accent" mat-raised-button (click)="countdownTimer.setTime( countdownTimer.startTime, false )">Reset Timer</button>
+    </mat-card-actions>
+</mat-card>

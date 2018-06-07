@@ -1,0 +1,49 @@
+<mat-card class="fill">
+    <mat-card-actions>
+        <mat-form-field>
+            <input
+                matInput
+                placeholder="Enter new player name"
+                [errorStateMatcher]="matcher"
+                [formControl]="playerName"
+                (keyup.enter)="onAddPlayer( playerName.value )"
+            />
+            <mat-hint>Press enter to add user</mat-hint>
+            <mat-error *ngIf="playerName.hasError( 'alreadyExists' )">Already exists. Choose a different name.</mat-error>
+        </mat-form-field>
+    </mat-card-actions>
+    <mat-card-content>
+        <mat-expansion-panel *ngFor="let player of getPlayersArray();">
+            <mat-expansion-panel-header>
+                <span class="player-name">{{ player.name }} {{ getPlayerDebts( player ) > 0 ? ' owes $' + getPlayerDebts( player ) : '' }}</span>
+            </mat-expansion-panel-header>
+            <button
+                mat-fab
+                matTooltip="Add buy in"
+                matTooltipPosition="left"
+                (click)="onAddBuyIn( player )"
+                aria-label="Add buy in"
+            >+</button>
+            <button
+                mat-fab
+                matTooltip="Remove last buy in"
+                matTooltipPosition="right"
+                (click)="onRemoveBuyIn( player )"
+                aria-label="Remove last buy in"
+            >-</button>
+            <ul>
+                <li class="mat-caption" *ngFor="let buyIn of getPlayerBuyIns( player )">
+                    {{ buyIn.time | date : 'shortTime' }}
+                    <mat-button-toggle-group #group="matButtonToggleGroup" name="buyInType" aria-label="Buy In Type" [value]="buyIn.type" (change)="buyIn.type = group.value">
+                        <mat-button-toggle
+                            matTooltip="Paid in cash"
+                            [value]="cashType"><mat-icon aria-label="Cash">attach_money</mat-icon></mat-button-toggle>
+                        <mat-button-toggle
+                            matTooltip="Still owes money to pot"
+                            [value]="creditType"><mat-icon aria-label="Credit">credit_card</mat-icon></mat-button-toggle>
+                    </mat-button-toggle-group>
+                </li>
+            </ul>
+        </mat-expansion-panel>
+    </mat-card-content>
+</mat-card>

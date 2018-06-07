@@ -1,0 +1,10 @@
+:host {
+    > mat-card {
+        width: 100%;
+        flex: 1;
+        text-align: center;
+    }
+    .mat-display-4 {
+        padding-right: .5rem;
+    }
+}

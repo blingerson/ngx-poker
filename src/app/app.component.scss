@@ -1,0 +1,6 @@
+:host {
+    height: 100%;
+    &.blink-on::ng-deep * {
+        background-color: yellow;
+    }
+}

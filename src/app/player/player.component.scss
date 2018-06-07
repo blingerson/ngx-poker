@@ -1,0 +1,18 @@
+@import '../../mixins';
+:host {
+    mat-form-field {
+        width: 100%;
+    }
+    mat-icon {
+        @include mat-icon-size( .8rem );
+    }
+    mat-button-toggle-group {
+        margin-left: .5rem;
+    }
+    mat-button-toggle {
+        height: 1.2rem;
+    }
+    &::ng-deep .mat-button-toggle-label-content {
+        line-height: 1.2rem;
+    }
+}

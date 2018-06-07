@@ -1,0 +1,17 @@
+@import '~@angular/material/theming';
+@import url('//fonts.googleapis.com/icon?family=Material+Icons');
+
+@include mat-core();
+
+$primary: mat-palette($mat-deep-orange, 500);
+$accent:  mat-palette($mat-gray, 500, A200, A400);
+$warn:    mat-palette($mat-red, 500);
+$cool: mat-palette($mat-blue-gray);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+$coolTheme: mat-light-theme($cool, $accent, $warn);
+
+$padding-base-horizontal: 1.6rem;
+$padding-base-vertical: .8rem;
+
+

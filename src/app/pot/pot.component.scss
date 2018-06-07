@@ -1,0 +1,22 @@
+:host {
+    width: 100%;
+    mat-card {
+        width: 100%;
+        flex: 1;
+    }
+    dl {
+        clear: both;
+        width: 50%;
+    }
+    dt {
+        float: left;
+        clear: left;
+        &:after {
+            content: ':';
+        }
+    }
+    dd {
+        float: right;
+        margin-left: .4rem;
+    }
+}

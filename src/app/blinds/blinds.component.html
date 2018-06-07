@@ -1,0 +1,35 @@
+<aside class="fill-vertical">
+    <mat-card>
+        <mat-card-title>
+            <h2>Current Blind:</h2>
+        </mat-card-title>
+        <mat-card-content>
+            <strong class="mat-display-3">{{ blinds.blind }}</strong>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="fill">
+        <mat-card-title>
+            <h2>Blind Structure</h2>
+        </mat-card-title>
+        <mat-card-content>
+            <ol>
+                <li
+                    *ngFor="let blind of blinds.blinds; let index = index"
+                    [ngClass]="{ active : index === blinds.currentBlind }"
+                >{{ blind }}</li>
+            </ol>
+        </mat-card-content>
+        <mat-card-actions>
+            <button
+                mat-icon-button
+                matTooltip="Increment Blinds"
+                (click)="blinds.increment()"
+                aria-label="Increment Blinds"><mat-icon>add</mat-icon></button>
+            <button
+                mat-icon-button
+                (click)="blinds.decrement()"
+                matTooltip="Decrement Blinds"
+                aria-label="Decrement Blinds"><mat-icon>remove</mat-icon></button>
+        </mat-card-actions>
+    </mat-card>
+</aside>

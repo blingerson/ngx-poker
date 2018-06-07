@@ -1,0 +1,27 @@
+@import '../../variables.scss';
+
+:host {
+    width: 25%;
+    min-width: 15rem;
+
+    aside {
+        height: 100%;
+    }
+}
+
+strong {
+    font-size: 2rem;
+}
+
+ol {
+    list-style: none;
+    padding-left: 0;
+    li {
+        padding: .2rem 0;
+        &.active {
+            font-weight: bold;
+            color: mat-color( $primary );
+        }
+    }
+}
+
